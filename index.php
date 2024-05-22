@@ -14,9 +14,9 @@ $mail_address = isset($_POST['mail']) ? $_POST['mail'] : "" ;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <div class="container">
@@ -30,7 +30,7 @@ $mail_address = isset($_POST['mail']) ? $_POST['mail'] : "" ;
                 </form>
             </div>
             <!-- Richiamo funzione in_page_address da functions.php -->
-            <p><?php in_page_address($mail_address) ?></p>
+            <p class="<?php is_successful($mail_address)?>"><?php in_page_address($mail_address) ?></p>
         </div>
     </div>
 </body>

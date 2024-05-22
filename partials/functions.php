@@ -14,4 +14,12 @@ function in_page_address($mail){
         echo "L'indirizzo inserito non è valido";
     }
 }
+
+function is_successful($mail_color){
+    if(is_valid_address($mail_color)){
+        echo "alert-success";
+    }else {
+        echo "alert-danger";
+    }
+}
 ?>
