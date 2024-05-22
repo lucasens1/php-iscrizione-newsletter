@@ -1,5 +1,23 @@
 <?php 
-$mail_address = $_POST['mail'];
+#Inizializzo una variabile, che contiene l'e-mail, se non è settata la metto vuota
+$mail_address = isset($_POST['mail']) ? $_POST['mail'] : "" ;
+#Console log
+var_dump($mail_address);
+
+#Funzione che controlla sia valida
+function is_valid_address($address){
+    #Da Documentazione filter_var -> filtra una variabile con uno specifico filtro
+    #Caso specifico -> $address è una MAIL valida? (Standard RFC)
+    return filter_var($address, FILTER_VALIDATE_EMAIL);
+}
+
+#Controllo che stampa in pagina i due output
+if(is_valid_address($mail_address)){
+    echo "L'indirizzo inserito è valido";
+}else{
+    echo "L'indirizzo inserito non è valido";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +31,14 @@ $mail_address = $_POST['mail'];
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <h1>Form di Registrazione : </h1>
-            <div class="col-6">
-                <form action="index.php" method="POST">
-                    <label for="mail">La tua E-mail : </label>
-                    <input type="text" name="mail">
+        <div class="row text-center p-4 border border-rounded my-5">
+            <h1 class="p-2">Form di Registrazione : </h1>
+            <div class="col justify-content-center my-4">
+                <form action="index.php" method="POST" class="text-center d-flex justify-content-center align-items-center">
+                    <label for="mail" class="mx-2">La tua e-mail : </label>
+                    <input type="text" id="mail" name="mail">
+                    <button type="submit" class="btn btn-primary mx-2">Invia</button>
                 </form>
-                <button type="submit" class="btn btn-primary">Invia</button>
             </div>
         </div>
     </div>
