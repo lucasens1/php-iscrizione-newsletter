@@ -9,6 +9,7 @@ include_once __DIR__ . "/partials/functions.php";
 
 #Inizializzo una variabile, che contiene l'e-mail, se non è settata la metto vuota
 $mail_address = isset($_POST['mail']) ? $_POST['mail'] : "" ;
+
 #Console log
 /* var_dump($mail_address); */
 /* var_dump($valid_flag); */
@@ -36,6 +37,7 @@ $mail_address = isset($_POST['mail']) ? $_POST['mail'] : "" ;
                         <label for="mail" class="mx-2">La tua e-mail : </label>
                         <input type="text" id="mail" name="mail" value="<?php echo isset($_POST['mail']) ? $_POST['mail'] : "" ?>">
                         <button type="submit" class="btn btn-primary mx-2">Invia</button>
+                        <button type="reset" class="btn btn-danger mx-2">Reset</button>
                 </form>
             </div>
             <!-- Richiamo funzione in_page_address da functions.php -->

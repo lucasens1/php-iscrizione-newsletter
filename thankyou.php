@@ -27,6 +27,7 @@ check_auth();
             <div class="col-12">
                 <h1 class="text-center">
                     Congratulazioni e-mail corretta 
+                    <?php echo var_dump($_SESSION) ?>
                 </h1>
             </div>
         </div>
